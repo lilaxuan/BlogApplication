@@ -26,9 +26,10 @@ public class Inserter {
 		BlogPostsDao blogPostsDao = BlogPostsDao.getInstance();
 		BlogCommentsDao blogCommentsDao = BlogCommentsDao.getInstance();
 		ResharesDao resharesDao = ResharesDao.getInstance();
-		
+
+		System.out.println("hihihihihi");
 		// INSERT objects from our model.
-		Persons person = new Persons("b", "bruce", "chhay");
+		Persons person = new Persons("Jiaxuan", "bruce", "chhay");
 		person = personsDao.create(person);
 		Persons person1 = new Persons("b1", "bruce", "chhay");
 		person1 = personsDao.create(person1);
