@@ -29,7 +29,7 @@ public class Inserter {
 
 		System.out.println("hihihihihi");
 		// INSERT objects from our model.
-		Persons person = new Persons("Jiaxuan", "bruce", "chhay");
+		Persons person = new Persons("Jiaxuan", "bruce", "lilili");
 		person = personsDao.create(person);
 		Persons person1 = new Persons("b1", "bruce", "chhay");
 		person1 = personsDao.create(person1);
@@ -74,7 +74,7 @@ public class Inserter {
 		reshare2 = resharesDao.create(reshare2);
 		
 		// READ.
-		Persons p1 = personsDao.getPersonFromUserName("b");
+		Persons p1 = personsDao.getPersonFromUserName("Jiaxuan");
 		List<Persons> pList1 = personsDao.getPersonsFromFirstName("bruce");
 		System.out.format("Reading person: u:%s f:%s l:%s \n",
 			p1.getUserName(), p1.getFirstName(), p1.getLastName());
