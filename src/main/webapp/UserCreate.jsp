@@ -8,34 +8,51 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
 <title>Create a User</title>
 </head>
 <body>
+	<div class="container theme-showcase" role="main">
+	
+	<div class="jumbotron">
 	<h1>Create BlogUser</h1>
+	</div>
 	<form action="usercreate" method="post">
 		<p>
-			<label for="username">UserName</label>
+			<h2><label for="username">UserName</label></h2>
 			<input id="username" name="username" value="">
 		</p>
 		<p>
-			<label for="firstname">FirstName</label>
+			<h2><label for="firstname">FirstName</label></h2>
 			<input id="firstname" name="firstname" value="">
 		</p>
 		<p>
-			<label for="lastname">LastName</label>
+			<h2><label for="lastname">LastName</label></h2>
 			<input id="lastname" name="lastname" value="">
 		</p>
 		<p>
-			<label for="dob">DoB (yyyy-mm-dd)</label>
+			<h2><label for="dob">DoB (yyyy-mm-dd)</label></h2>
 			<input id="dob" name="dob" value="">
 		</p>
 		<p>
-			<input type="submit">
+			<input type="submit" class="btn btn-lg btn-primary">
 		</p>
 	</form>
 	<br/><br/>
 	<p>
+		<div class="alert alert-success" role="alert">
 		<span id="successMessage"><b>${messages.success}</b></span>
+		</div>
 	</p>
+	
+	</div>
+	
+	<!-- Bootstrap -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    
 </body>
 </html>

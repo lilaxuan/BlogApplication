@@ -8,27 +8,40 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
 <title>BlogComments</title>
 </head>
 <body>
+	<div class="container theme-showcase" role="main">
+
+	<div class="jumbotron">
 	<h1>${messages.title}</h1>
-        <table border="1">
-            <tr>
+	</div>
+        <table class="table table-striped">
+            <thead><tr>
                 <th>CommentId</th>
                 <th>PostId</th>
                 <th>UserName</th>
                 <th>Content</th>
                 <th>Created</th>
-            </tr>
+            </tr></thead>
             <c:forEach items="${blogComments}" var="blogComment" >
-                <tr>
+                <tbody><tr>
                     <td><c:out value="${blogComment.getCommentId()}" /></td>
                     <td><c:out value="${blogComment.getBlogPost().getPostId()}" /></td>
                     <td><c:out value="${blogComment.getBlogUser().getUserName()}" /></td>
                     <td><c:out value="${blogComment.getContent()}" /></td>
                     <td><fmt:formatDate value="${blogComment.getCreated()}" pattern="MM-dd-yyyy hh:mm:sa"/></td>
-                </tr>
+                </tr></tbody>
             </c:forEach>
        </table>
+	</div>
+
+    <!-- Bootstrap -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

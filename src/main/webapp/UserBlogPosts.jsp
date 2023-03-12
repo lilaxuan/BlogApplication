@@ -8,12 +8,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
 <title>BlogPosts</title>
 </head>
 <body>
+    <div class="container theme-showcase" role="main">
+    
+    <div class="jumbotron">
 	<h1>${messages.title}</h1>
-        <table border="1">
-            <tr>
+	</div>
+        <table class="table table-striped">
+            <thead><tr>
                 <th>PostId</th>
                 <th>Title</th>
                 <th>Content</th>
@@ -21,9 +27,9 @@
                 <th>Created</th>
                 <th>Comments</th>
                 <th>Delete BlogPost</th>
-            </tr>
+            </tr></thead>
             <c:forEach items="${blogPosts}" var="blogPost" >
-                <tr>
+                <tbody><tr>
                     <td><c:out value="${blogPost.getPostId()}" /></td>
                     <td><c:out value="${blogPost.getTitle()}" /></td>
                     <td><c:out value="${blogPost.getContent()}" /></td>
@@ -31,8 +37,15 @@
                     <td><fmt:formatDate value="${blogPost.getCreated()}" pattern="MM-dd-yyyy hh:mm:sa"/></td>
                     <td><a href="blogcomments?postid=<c:out value="${blogPost.getPostId()}"/>">BlogComments</a></td>
                     <td><a href="deleteblogpost?postid=<c:out value="${blogPost.getPostId()}"/>">Delete</a></td>
-                </tr>
+                </tr></tbody>
             </c:forEach>
        </table>
+    </div>
+       
+    <!-- Bootstrap -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
